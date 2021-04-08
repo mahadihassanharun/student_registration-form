@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock title %}
+
+
+{% block body %}<form>
+
+{% for  message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Message</strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+
+<h2 class="text-center my-3">R E G I S T E R --FORM</h2>
+
+<div class="container">
+{% comment %} <form method="POST" action="/register"> {% endcomment %}
+<form method="POST" action="register">
+{% csrf_token %}
+<div class="mb-3">
+    <label for="exampleInputname" class="form-label">Name</label>
+    <input type="text" class="form-control" id="inputname" aria-describedby="emailHelp" 
+    placeholder="Enter your name please" name="name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+    placeholder="Enter your Email" name="email">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Phone</label>
+    <input type="Phone" class="form-control" id="exampleInputPassword1" 
+    placeholder="Enter your phone number" name="phone">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-warning">Submit</button>
+</div
+</form>
+<div class="card">
+  <div class="card-body">
+    
+      <div class="card-footer text-muted text-center footer-dark bg-info "> --F O O T E R-- </div>
+      
+    
+  </div>
+</div>
+</form>{% endblock body %}
